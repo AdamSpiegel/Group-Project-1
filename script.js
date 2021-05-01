@@ -9,6 +9,8 @@ var ingredients = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
 var ul = document.getElementById("myUL");
 var ul2 = document.getElementById("drinkNames")
 
+var ingrOpts = [];
+
 document.querySelector("#myInput").addEventListener("keyup", function (event) {
     var input, filter, ul, li, a, i, txtValue;
     // input = document.getElementById("myInput");
@@ -40,7 +42,11 @@ document.querySelector("#Submit").addEventListener ("click", function (event){
   event.preventDefault()
   var input1 = document.getElementById("myInput");
   var inVal = input1.value
-  searchForDrink(inVal)
+  // control flow to check if the input matches the available data
+  if (ingrOpts.includes(inVal.toLowerCase())){
+    searchForDrink(inVal)
+  }
+  
   // console.log (inVal)
 })
 
@@ -84,6 +90,7 @@ function getIngredients(){
         aEl.textContent = first;
         listEl.append(aEl);
         ul.append(listEl);
+        ingrOpts.push(first.toLowerCase());
         // console.log(first);
     }
   });
