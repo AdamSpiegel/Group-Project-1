@@ -1,8 +1,14 @@
 // var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
-// var srchByIng = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin';
+
+// Make sure to add the selected ingredient to end of url before fetch
+var srchByIng = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=';
+
+// Url to grab all available ingredients in drinks
 var ingredients = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
-// var ingrLi = document.querySelector('#ingr');
-// var thingy = document.createElement('li');
+
+var ul = document.getElementById("myUL");
+var ul2 = document.getElementById("drinkNames")
+
 document.querySelector("#myInput").addEventListener("keyup", function (event) {
     var input, filter, ul, li, a, i, txtValue;
     // input = document.getElementById("myInput");
@@ -29,13 +35,21 @@ var a = document.querySelectorAll("#myUL a")
 // loop through the array and add an event listener for each drink
 
 
-// breaks due to line 32 
-// document.querySelectorAll("#myUL a").addEventListener ("click", function (event){
-// document.getElementById("myInput").value = event.target.textContent;
-// })
+// event listener for ingredient selection which will ready the second submit 
 document.querySelector("#Submit").addEventListener ("click", function (event){
-var input = document.getElementById("myInput");
-console.log (input.value)
+  event.preventDefault()
+  var input1 = document.getElementById("myInput");
+  var inVal = input1.value
+  searchForDrink(inVal)
+  // console.log (inVal)
+})
+
+// second submission portion to handle drink selection
+document.querySelector("#submit2").addEventListener ("click", function (event){
+  event.preventDefault()
+  var input2 = document.getElementById("input2");
+  var inVal2 = input2.value
+  // TODO: add function for drink name selection maybe add favorites here
 })
 
 // // // var responseText = document.getElementById('response-text');
@@ -55,17 +69,45 @@ console.log (input.value)
 //   });
 // }
 // getApi(ingredients);
-var requestUrl = 'https://api.github.com/repos/twitter/chill/issues?per_page=5';
-fetch(ingredients)
+
+// Fetch drink api to find list of available ingredients to make the drinks with
+function getIngredients(){
+  fetch(ingredients)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    //   console.log(data)
-    //   console.log(data.drinks.length);
     for (var i = 0; i < data.drinks.length; i++) {
         var first = data.drinks[i].strIngredient1
-        console.log(first);
-    //   console.log(data[i].user.login);
+        var listEl = document.createElement('li');
+        var aEl = document.createElement('a');
+        aEl.textContent = first;
+        listEl.append(aEl);
+        ul.append(listEl);
+        // console.log(first);
     }
   });
+}
+getIngredients();
+
+
+  // Function to fetch available drinks to make with selected ingredient
+function searchForDrink(eventAdd) {
+  srchByIng = srchByIng + eventAdd
+  fetch(srchByIng)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      for (var i = 0; i < data.drinks.length; i++) {
+          var second = data.drinks[i].strDrink;
+          var list2El = document.createElement('li');
+          var a2El = document.createElement('a');
+          a2El.textContent = second;
+          list2El.append(a2El);
+          ul2.append(list2El);
+          // console.log(second);
+      }
+    });
+}
+
