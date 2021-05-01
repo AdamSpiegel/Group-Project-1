@@ -46,7 +46,7 @@ document.querySelector("#Submit").addEventListener ("click", function (event){
   if (ingrOpts.includes(inVal.toLowerCase())){
     searchForDrink(inVal)
   }
-  
+
   // console.log (inVal)
 })
 
@@ -55,6 +55,7 @@ document.querySelector("#submit2").addEventListener ("click", function (event){
   event.preventDefault()
   var input2 = document.getElementById("input2");
   var inVal2 = input2.value
+  deleteChild()
   // TODO: add function for drink name selection maybe add favorites here
 })
 
@@ -119,3 +120,12 @@ function searchForDrink(eventAdd) {
     });
 }
 
+// function to delete all li from ul, its called in second submission btn
+function deleteChild() {
+  //e.firstElementChild can be used.
+  var child = ul2.lastElementChild; 
+  while (child) {
+      ul2.removeChild(child);
+      child = ul2.lastElementChild;
+  }
+}
