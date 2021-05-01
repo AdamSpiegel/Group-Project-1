@@ -1,6 +1,6 @@
 // var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
 // var srchByIng = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin';
-// var ingredients = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
+var ingredients = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
 // var ingrLi = document.querySelector('#ingr');
 // var thingy = document.createElement('li');
 document.querySelector("#myInput").addEventListener("keyup", function (event) {
@@ -38,8 +38,7 @@ var input = document.getElementById("myInput");
 console.log (input.value)
 })
 
-
-// // var responseText = document.getElementById('response-text');
+// // // var responseText = document.getElementById('response-text');
 // function getApi(thing) {
 //   fetch(thing)
 //     .then(function (response) {
@@ -56,18 +55,17 @@ console.log (input.value)
 //   });
 // }
 // getApi(ingredients);
-// var requestUrl = 'https://api.github.com/repos/twitter/chill/issues?per_page=5';
-// fetch(ingredients)
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//       console.log(data)
-//     //   console.log(data.drinks.length);
-//     for (var i = 0; i < data.drinks.length; i++) {
-//         var first = data.drinks[i];
-//         console.log(first);
-// ​
-//     //   console.log(data[i].user.login);
-//     }
-//   });
+var requestUrl = 'https://api.github.com/repos/twitter/chill/issues?per_page=5';
+fetch(ingredients)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    //   console.log(data)
+    //   console.log(data.drinks.length);
+    for (var i = 0; i < data.drinks.length; i++) {
+        var first = data.drinks[i].strIngredient1
+        console.log(first);
+    //   console.log(data[i].user.login);
+    }
+  });
