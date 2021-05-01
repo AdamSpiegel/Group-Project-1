@@ -100,6 +100,7 @@ getIngredients();
 
   // Function to fetch available drinks to make with selected ingredient
 function searchForDrink(eventAdd) {
+  var srchByIng = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=';
   srchByIng = srchByIng + eventAdd
   fetch(srchByIng)
     .then(function (response) {
