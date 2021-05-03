@@ -8,32 +8,26 @@
    <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--JQuery UI Library added-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+      
+  <!-- Custom CSS sytling sheet -->
+   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>Cocktail Generator</header>
+    <header>Cocktail & Recipe Generator</header>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light-grey">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-      </nav>
-
-    <main> Your Drink Options Include!</main>
-
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="badges.html">Restaurant Locator</a></li>
+          <li><a href="collapsible.html">Brewery Locator</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- <section>Ingridient Selections</section>
         <p>Choices (list)</p>
@@ -50,7 +44,7 @@
             <li></li>
         </ul>
         <button id="Submit">Submit</button> -->
-    
+        <h5> Your Drink Options Include!</h5>
         <input type="text" id="myInput"  placeholder="Search for names.." title="Type in a name">
             <ul id="myUL">
               <!-- Commenting out to add available ingredients from api through js file line 81 -->
@@ -66,15 +60,54 @@
                 <li><a href="#">Wine</a></li> -->
               </ul>
               <button id="Submit">Submit</button>
-
-              <form>  
-                
-                  <label for="exampleInputPassword1" class="form-label">Food Selection</label>
-                  <input type="password" class="form-control" id="input2">
-                </div>
                 <ul id="drinkNames"></ul>
                 <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
-              </form>    
+             
+    <!-- Attempting to Create Card/From to house API call for recipes -->
+          <h5>Your Food Selections Include</h5>
+
+          <form action="Food Choices">
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span>Meat</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" checked="checkbox" />
+                <span>Vegetarian</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" class="filled-in" checked="checkbox" />
+                <span>Fish</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input id="indeterminate-checkbox" type="checkbox" />
+                <span>Pasta</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" checked="checked" disabled="disabled" />
+                <span>Green</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" disabled="disabled" />
+                <span>Brown</span>
+              </label>
+            </p>
+          </form>
+
+
+
+  
        
 
 <!-- 
@@ -96,7 +129,10 @@
                 }
             }
             </script> -->
-          
+          <head>
+          <!-- jQuery UI <script> tag -->
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
           <script src="script.js"></script>
 
     
