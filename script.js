@@ -51,7 +51,7 @@ document.querySelector("#Submit").addEventListener ("click", function (event){
 })
 
 // second submission portion to handle drink selection
-document.querySelector("#submit2").addEventListener ("click", function (event){
+document.querySelector("#Submit").addEventListener ("click", function (event){
   event.preventDefault()
   var input2 = document.getElementById("input2");
   var inVal2 = input2.value
@@ -129,3 +129,5 @@ function deleteChild() {
       child = ul2.lastElementChild;
   }
 }
+
+
