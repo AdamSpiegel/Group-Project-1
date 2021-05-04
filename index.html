@@ -1,141 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe and Cocktail Generator</title>
-   <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe and Cocktail Generator</title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--JQuery UI Library added-->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
-      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--JQuery UI Library added-->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
   <!-- Custom CSS sytling sheet -->
-   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>Cocktail & Recipe Generator</header>
-    
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="badges.html">Restaurant Locator</a></li>
-          <li><a href="collapsible.html">Brewery Locator</a></li>
-        </ul>
+  <header>Cocktail & Recipe Generator</header>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="badges.html">Restaurant Locator</a></li>
+        <li><a href="collapsible.html">Brewery Locator</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+  <input type="text" id="myInput"  placeholder="Search for names.." title="Type in a name">
+  <ul id="myUL">
+    </ul>
+    <button id="Submit">Submit</button>
+    <form>  
+        <label for="exampleInputPassword1" class="form-label"></label>
+        <input type="text" class="form-control" id="input2" placeholder="Ingredient Selections">
       </div>
-    </nav>
+      <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
+    </form>    
+    <h4 id="makeDrink"></h4>
+    <ul id="drinkNames"></ul>
+    <p id="instructions"></p>
+  </div>
 
-    <!-- <section>Ingridient Selections</section>
-        <p>Choices (list)</p>
-        <ul id="list">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <button id="Submit">Submit</button> -->
-        <h5> Your Drink Options Include!</h5>
-        <input type="text" id="myInput"  placeholder="Search for names.." title="Type in a name">
-            <ul id="myUL">
-              <!-- Commenting out to add available ingredients from api through js file line 81 -->
-                <!-- <li><a href="#">Gin</a></li>
-                <li><a href="#">Vodka</a></li>
-                <li><a href="#">Rum</a></li>
-                <li><a href="#">Whiskey</a></li>
-                <li><a href="#">Tequila</a></li>
-                <li><a href="#">Bourbon</a></li>
-                <li><a href="#">Cognac</a></li>
-                <li><a href="#">Liqueurs</a></li>
-                <li><a href="#">Brandy</a></li>
-                <li><a href="#">Wine</a></li> -->
-              </ul>
-              <button id="Submit">Submit</button>
-                <ul id="drinkNames"></ul>
-                <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
-             
-    <!-- Attempting to Create Card/From to house API call for recipes -->
-          <h5>Your Food Selections Include</h5>
+  <!-- Local Storage Functionality -->
+<script>
+function input2() {
+  if (typeof(Storage) !== "undefinded") {
+    if (localStorage.input2.value) {
+      localStorage.input2= Number(localStorage.input2)+1;
+    } else {
+      localStorage.input2 = 1;
+    }
+    document.getElementById("makeDrink").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+  } else {
+    document.getElementById("makeDrink").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+</script>
 
-          <form action="Food Choices">
-            <p>
-              <label>
-                <input type="checkbox" />
-                <span>Meat</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input type="checkbox" checked="checkbox" />
-                <span>Vegetarian</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input type="checkbox" class="filled-in" checked="checkbox" />
-                <span>Fish</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input id="indeterminate-checkbox" type="checkbox" />
-                <span>Pasta</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input type="checkbox" checked="checked" disabled="disabled" />
-                <span>Green</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input type="checkbox" disabled="disabled" />
-                <span>Brown</span>
-              </label>
-            </p>
-          </form>
+  <head>
+    <!-- jQuery UI <script> tag -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script.js"></script>
 
 
-
-  
-       
-
-<!-- 
-        <script>
-            function myFunction() {
-                var input, filter, ul, li, a, i, txtValue;
-                input = document.getElementById("myInput");
-                filter = input.value.toUpperCase();
-                ul = document.getElementById("myUL");
-                li = ul.getElementsByTagName("li");
-                for (i = 0; i < li.length; i++) {
-                    a = li[i].getElementsByTagName("a")[0];
-                    txtValue = a.textContent || a.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        li[i].style.display = "";
-                    } else {
-                        li[i].style.display = "none";
-                    }
-                }
-            }
-            </script> -->
-          <head>
-          <!-- jQuery UI <script> tag -->
-          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-          <script src="script.js"></script>
-
-    
 </body>
 
 </html>
+
+<!-- STILL NEED TO INCLUDE
+1) Local Storage
+2) ReadMe File -->
