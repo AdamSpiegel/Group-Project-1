@@ -307,3 +307,11 @@ function makeMeal(eventAdd2) {
       }
     })
 }
+
+// Modal Initilization
+document.addEventListener('DOMContentLoaded', function() {
+  console.log(M)
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems);
+  console.log(elems[0])
+}); 
