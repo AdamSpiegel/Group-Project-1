@@ -6,16 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe and Cocktail Generator</title>
-  <!-- Favicon for Browser -->
-  <link rel="icon" type="image/png" href="cocktail.png"/>
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!--JQuery UI Library added-->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
- 
-
   <!-- Custom CSS sytling sheet -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -26,22 +22,22 @@
   <nav>
     <div class="nav-wrapper">
       <!-- Images for Logo section of Navbar -->
-      <a href="#" class="brand-logo"><img src="liquor.png" alt="liquor image" style="width:60px;height:60px;"></a> 
-      <a href="#" class="brand-logo2"><img src="diet.png" alt="food image" style="width:50px;height:50px;"></a>
+      <a href="#" class="brand-logo"><img src="Images/liquor.png" alt="liquor image" style="width:60px;height:60px;"></a>
+      <a href="#" class="brand-logo2"><img src="Images/diet.png" alt="food image" style="width:60px;height: 60px;px;"></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <!-- Modal Trigger -->
- <button data-target="modal1" class="btn modal-trigger">Terms and Conditions</button>
- <!-- Modal Structure -->
- <div id="modal1" class="modal">
-   <div class="modal-content">
-     <h4>Terms and Conditions</h4>
-     <p>I certify that I am over 21.....</p>
-   </div>
-   <div class="modal-footer">
-     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Disagree</a>
-   </div>
- </div>
+        <button data-target="modal1" class="btn modal-trigger">Terms and Conditions</button>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>Terms and Conditions</h4>
+            <p>I certify that I am over 21.....</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Disagree</a>
+          </div>
+        </div>
         <li><a href="https://everyrestaurantinthecity.com/">Restaurant Locator</a></li>
         <li><a href="https://www.craftbeer.com/breweries/find-a-us-brewery">Brewery Locator</a></li>
       </ul>
@@ -49,36 +45,53 @@
   </nav>
 
   <div class="wrapper">
-  <input type="text" id="myInput"  placeholder="Search for names.." title="Type in a name">
-  <ul id="myUL">
+    <input type="text" id="myInput" placeholder="Search for names.." title="Type in a name">
+    <ul id="myUL">
     </ul>
     <button id="Submit">Submit</button>
-    <form>  
-        <label for="exampleInputPassword1" class="form-label"></label>
-        <input type="text" class="form-control" id="input2" placeholder="Ingredient Selections">
-      </div>
-      <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
-    </form>    
-    <h4 id="makeDrink"></h4>
-    <ul id="drinkNames"></ul>
-    <p id="instructions"></p>
+    <form>
+      <label for="exampleInputPassword1" class="form-label"></label>
+      <input type="text" class="form-control" id="input2" placeholder="Ingredient Selections">
+  </div>
+  <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
+  </form>
+  <h4 id="makeDrink"></h4>
+  <ul id="drinkNames"></ul>
+  <p id="instructions"></p>
+  </div>
+
+  <!-- copying the above just to test the meal part -->
+  <div class="wrapper">
+    <input type="text" id="myInput2" placeholder="Search for names.." title="Type in a name">
+    <ul id="myUL2">
+    </ul>
+    <button id="Submit3">Submit</button>
+    <form>
+      <label for="exampleInputPassword1" class="form-label"></label>
+      <input type="text" class="form-control" id="input3" placeholder="Ingredient Selections">
+  </div>
+  <button type="submit" class="btn btn-primary" id="submit4">Submit</button>
+  </form>
+  <h4 id="makeMeal"></h4>
+  <ul id="mealNames"></ul>
+  <p id="instructionsMeal"></p>
   </div>
 
   <!-- Local Storage Functionality -->
-<script>
-function input2() {
-  if (typeof(Storage) !== "undefinded") {
-    if (localStorage.input2.value) {
-      localStorage.input2= Number(localStorage.input2)+1;
-    } else {
-      localStorage.input2 = 1;
+  <script>
+    function input2() {
+      if (typeof (Storage) !== "undefinded") {
+        if (localStorage.input2.value) {
+          localStorage.input2 = Number(localStorage.input2) + 1;
+        } else {
+          localStorage.input2 = 1;
+        }
+        document.getElementById("makeDrink").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+      } else {
+        document.getElementById("makeDrink").innerHTML = "Sorry, your browser does not support web storage...";
+      }
     }
-    document.getElementById("makeDrink").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-  } else {
-    document.getElementById("makeDrink").innerHTML = "Sorry, your browser does not support web storage...";
-  }
-}
-</script>
+  </script>
 
   <head>
     <!-- jQuery UI <script> tag -->
@@ -94,5 +107,4 @@ function input2() {
 
 <!-- STILL NEED TO INCLUDE
 1) Local Storage
-2) ReadMe File
-3) Modal 
+2) ReadMe File -->
