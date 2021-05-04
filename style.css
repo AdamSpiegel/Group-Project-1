@@ -49,6 +49,18 @@ nav{
   #myUL li a:hover:not(.header) {
     background-color: #eee;
   }
+
+  /* Trying to alter images size/position */
+  .brand-logo {
+    position: absolute;
+    justify-content: left;
+
+  }
+  .brand-logo2 {
+    position: absolute;
+    justify-content: left;
+    left: 80px
+  }
   
   /* #input2 {
     width: 500px; 
