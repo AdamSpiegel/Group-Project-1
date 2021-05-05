@@ -14,6 +14,9 @@ var ul2 = document.getElementById("drinkNames")
 
 var ingrOpts = [];
 
+// Where local storage is going to be housed
+var searchHistory =[];
+
 
 document.querySelector("#myInput").addEventListener("keyup", function (event) {
     var input, filter, ul, li, a, i, txtValue;
@@ -35,10 +38,26 @@ document.querySelector("#myInput").addEventListener("keyup", function (event) {
         }
     }
 })
+// Anonymous function
+// var a = Array.from(document.querySelectorAll("#myUL a"));
+// for(var i = 0; i<a.length; i++){
+//   a[i].addEventListener("click", function(e){
+//     console.log(e.target)
+//   })
+// }
+document.getElementById("myUL").addEventListener("click", function(e){
+if (e.target.tagName === "A"){
+  console.log (e.target)
+  // Insert autocomplete function here
+  document.querySelector("#myInput").value = e.target.textContent
+  document.getElementById("myUL").style.display = "none"
+}
 
-var a = document.querySelectorAll("#myUL a")
+});
 
 // loop through the array and add an event listener for each drink
+// Need Event Listeners to loop
+
 
 
 // event listener for ingredient selection which will ready the second submit 
