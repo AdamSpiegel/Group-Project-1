@@ -254,12 +254,18 @@ function makeDrink(eventAdd2) {
       // console.log(make3)
       for (var i = 0; i < makeIt.length; i++) {
         if (makeIt[i] != null) {
-          // console.log(makeIt[i]);
+          // console.log(msrAll[i]);
           var listEl3 = document.createElement("li");
+          listEl3.textContent = makeIt[i]
+          
+        } 
+        if (msrAll[i] != null){
+          var listEl3 = document.createElement("li");
+          // msrContent = msrAll[i]
           listEl3.textContent = msrAll[i] + " " + makeIt[i];
-          ul2.append(listEl3);
-          document.getElementById("instructions").textContent = instructions;
         }
+        ul2.append(listEl3);
+        document.getElementById("instructions").textContent = instructions;
       }
     });
 }
@@ -527,17 +533,20 @@ function makeMeal(eventAdd2) {
         msr20,
       ];
       var instructions = data.meals[0].strInstructions;
-      // console.log(make3)
       for (var i = 0; i < makeIt.length; i++) {
         if (makeIt[i] != null) {
-          // console.log(makeIt[i]);
+          // console.log(msrAll[i]);
           var listEl3 = document.createElement("li");
+          listEl3.textContent = makeIt[i]
+          
+        } 
+        if (msrAll[i] != null){
+          var listEl3 = document.createElement("li");
+          // msrContent = msrAll[i]
           listEl3.textContent = msrAll[i] + " " + makeIt[i];
-          ul3.append(listEl3);
-          document.getElementById(
-            "instructionsMeal"
-          ).textContent = instructions;
         }
+        ul3.append(listEl3);
+        document.getElementById("instructionsMeal").textContent = instructions;
       }
     });
 }
