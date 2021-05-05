@@ -9,24 +9,26 @@ header{
   font-size: 40px;
   color: white;
   text-align: center;
-
 }
 
 nav{
 background-color: grey;
 color: white;
 font-size: 30px;
-
 }
 
 #myInput {
     /* background-image: url('/css/searchicon.png'); */
+    margin: 20px 20px 20px 20px;
     background-position: 10px 12px;
     background-repeat: no-repeat;
     width: 30%;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;
+
+    
+=======
     margin-bottom: 12px;
     color: white;
   }
@@ -47,12 +49,15 @@ font-size: 30px;
     display: block;
     width: 20%;
   }
+
   #myUL li a:hover:not(.header) {
     background-color: #eee;
   }
+
   #search_container{
     position: relative;
   }
+
   #autocomplete{
     position: absolute; 
     z-index: -1; 
@@ -66,6 +71,7 @@ font-size: 30px;
   
 #myInput2 {
   /* background-image: url('/css/searchicon.png'); */
+  margin: 20px 20px 20px 20px;
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 30%;
@@ -76,6 +82,7 @@ font-size: 30px;
   color: white;
 
 }
+
 #myUL2 {
   list-style-type: none;
   padding: 0;
@@ -96,6 +103,27 @@ font-size: 30px;
 #myUL2 li a:hover:not(.header) {
   background-color: #eee;
 }
+
+#input3 {
+  border: 1px solid white;
+  padding: 12px 20px 12px 40px;
+  width: 20%;
+  margin: 20px 20px 20px 20px;
+}
+#input2 {
+  margin: 20px 20px 20px 20px;
+  border: 1px solid white;
+  padding: 12px 20px 12px 40px;
+  width: 20%;
+display: inline-flex;
+}
+.brand-logo {
+  margin-left: 60px;
+}
+.brand-logo2{
+  margin-left: 10px;
+}
+=======
 
 #h4{
   background-color: darkgrey;
@@ -137,4 +165,3 @@ font-size: 30px;
     margin-left: 150px;
 
   }
-  
