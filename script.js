@@ -67,6 +67,9 @@ document.querySelector("#Submit").addEventListener ("click", function (event){
   var inVal = input1.value
   // control flow to check if the input matches the available data
   if (ingrOpts.includes(inVal.toLowerCase())){
+    deleteChild(ul2)
+    document.getElementById('makeDrink').textContent = 'Showing results for ' + inVal
+    document.getElementById('instructions').textContent = ''
     searchForDrink(inVal)
   }
 })
@@ -144,7 +147,7 @@ function makeDrink(eventAdd2) {
     .then(function (data) {
       // console.log(data)
       // This function will handle printing ingredients and instructions for the specific drink selected
-      document.getElementById('makeDrink').textContent = 'Ingredients'
+      document.getElementById('makeDrink').textContent = 'Ingredients for ' + data.drinks[0].strDrink
       var make1 = data.drinks[0].strIngredient1
       var msr1 = data.drinks[0].strMeasure1
       var make2 = data.drinks[0].strIngredient2
@@ -220,6 +223,9 @@ document.querySelector("#Submit3").addEventListener ("click", function (event){
   // control flow to check if the input matches the available data
   if (mealOpts.includes(inVal2.toLowerCase())){
     searchForMeal(inVal2)
+    document.getElementById('makeMeal').textContent = 'Showing results for ' + inVal2
+    document.getElementById('instructionsMeal').textContent = ''
+    deleteChild(ul3)
     // console.log(inVal2)
   }
 })
@@ -267,7 +273,7 @@ function makeMeal(eventAdd2) {
     .then(function (data) {
       // console.log(data)
       // This function will handle printing ingredients and instructions for the specific drink selected
-      document.getElementById('makeMeal').textContent = 'Ingredients'
+      document.getElementById('makeMeal').textContent = 'Ingredients for ' + data.meals[0].strMeal
       var make1 = data.meals[0].strIngredient1
       var msr1 = data.meals[0].strMeasure1
       var make2 = data.meals[0].strIngredient2
