@@ -12,6 +12,8 @@ var mealUrl = "https://www.themealdb.com/api/json/v1/1/filter.php?i=";
 
 var ul = document.getElementById("myUL");
 var ul2 = document.getElementById("drinkNames");
+var ul3 = document.getElementById("mealNames")
+var ul4 = document.getElementById("myUL2")
 
 var ingrOpts = [];
 
@@ -40,6 +42,29 @@ document.querySelector("#myInput").addEventListener("keyup", function (event) {
     }
   }
 });
+
+
+document.querySelector("#myInput2").addEventListener("keyup", function (event) {
+  var input, filter, ul, li, a, i, txtValue;
+  // input = document.getElementById("myInput2");
+  input = event.target
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL2");
+  if(input.value === "")
+  {ul.style.display = "none"} 
+  else {    ul.style.display = "block"}
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
+  }
+})
+
 // Anonymous function
 // var a = Array.from(document.querySelectorAll("#myUL a"));
 // for(var i = 0; i<a.length; i++){
@@ -56,6 +81,15 @@ document.getElementById("myUL").addEventListener("click", function (e) {
   }
 });
 
+document.getElementById("myUL2").addEventListener("click", function(e){
+  if (e.target.tagName === "A"){
+    console.log (e.target)
+    // Insert autocomplete function here
+    document.querySelector("#myInput2").value = e.target.textContent
+    document.getElementById("myUL2").style.display = "none"
+  }
+});
+
 // window.localStorage.setItem("myUL", "searchHistory");
 // console.log(localStorage.getItem("myUL"));
 // loop through the array and add an event listener for each drink
@@ -69,7 +103,10 @@ document.querySelector("#Submit").addEventListener("click", function (event) {
   window.localStorage.setItem("myUL", inVal);
   // control flow to check if the input matches the available data
   if (ingrOpts.includes(inVal.toLowerCase())) {
-    searchForDrink(inVal);
+    deleteChild(ul2)
+    document.getElementById('makeDrink').textContent = 'Showing results for ' + inVal
+    document.getElementById('instructions').textContent = ''
+    searchForDrink(inVal)
   }
 });
 console.log(localStorage.getItem("myUL"));
@@ -249,7 +286,10 @@ document.querySelector("#Submit3").addEventListener("click", function (event) {
   var inVal2 = input3.value;
   // control flow to check if the input matches the available data
   if (mealOpts.includes(inVal2.toLowerCase())) {
-    searchForMeal(inVal2);
+    searchForMeal(inVal2)
+    document.getElementById('makeMeal').textContent = 'Showing results for ' + inVal2
+    document.getElementById('instructionsMeal').textContent = ''
+    deleteChild(ul3)
     // console.log(inVal2)
   }
 });
@@ -275,8 +315,13 @@ function getMealIngredients() {
     })
     .then(function (data) {
       for (var i = 0; i < data.meals.length; i++) {
-        var third = data.meals[i].strIngredient;
-        mealOpts.push(third.toLowerCase());
+        var third = data.meals[i].strIngredient
+      var listE2 = document.createElement('li');
+      var aE2 = document.createElement('a');
+      aE2.textContent = third;
+      listE2.append(aE2);
+      ul4.append(listE2);
+      mealOpts.push(third.toLowerCase());
       }
     });
 }
