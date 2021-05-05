@@ -177,7 +177,7 @@ function deleteChild(target) {
 
 function makeDrink(eventAdd2) {
   var findDrink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
-  findDrink = findDrink + eventAdd2;
+  findDrink = findDrink + encodeURIComponent(eventAdd2);
   fetch(findDrink)
     .then(function (response) {
       return response.json();
@@ -185,7 +185,7 @@ function makeDrink(eventAdd2) {
     .then(function (data) {
       // console.log(data)
       // This function will handle printing ingredients and instructions for the specific drink selected
-      document.getElementById("makeDrink").textContent = "Ingredients";
+      document.getElementById("makeDrink").textContent = "Ingredients for " + data.drinks[0].strDrink;
       var make1 = data.drinks[0].strIngredient1;
       var msr1 = data.drinks[0].strMeasure1;
       var make2 = data.drinks[0].strIngredient2;
@@ -352,59 +352,59 @@ document.querySelector("#submit4").addEventListener("click", function (event) {
   // TODO: add function for drink name selection maybe add favorites here
 });
 
-function makeMeal(eventAdd2) {
-  var findMeal = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-  findMeal = findMeal + eventAdd2;
-  fetch(findMeal)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      // console.log(data)
-      // This function will handle printing ingredients and instructions for the specific drink selected
-      document.getElementById("makeMeal").textContent = "Ingredients";
-      var make1 = data.meals[0].strIngredient1;
-      var msr1 = data.meals[0].strMeasure1;
-      var make2 = data.meals[0].strIngredient2;
-      var msr2 = data.meals[0].strMeasure2;
-      var make3 = data.meals[0].strIngredient3;
-      var msr3 = data.meals[0].strMeasure3;
-      var make4 = data.meals[0].strIngredient4;
-      var msr4 = data.meals[0].strMeasure4;
-      var make5 = data.meals[0].strIngredient5;
-      var msr5 = data.meals[0].strMeasure5;
-      var make6 = data.meals[0].strIngredient6;
-      var msr6 = data.meals[0].strMeasure6;
-      var make7 = data.meals[0].strIngredient7;
-      var msr7 = data.meals[0].strMeasure7;
-      var make8 = data.meals[0].strIngredient8;
-      var msr8 = data.meals[0].strMeasure8;
-      var make9 = data.meals[0].strIngredient9;
-      var msr9 = data.meals[0].strMeasure9;
-      var make10 = data.meals[0].strIngredient10;
-      var msr10 = data.meals[0].strMeasure10;
-      var make11 = data.meals[0].strIngredient11;
-      var msr11 = data.meals[0].strMeasure11;
-      var make12 = data.meals[0].strIngredient12;
-      var msr12 = data.meals[0].strMeasure12;
-      var make13 = data.meals[0].strIngredient13;
-      var msr13 = data.meals[0].strMeasure13;
-      var make14 = data.meals[0].strIngredient14;
-      var msr14 = data.meals[0].strMeasure14;
-      var make15 = data.meals[0].strIngredient15;
-      var msr15 = data.meals[0].strMeasure15;
-      var make16 = data.meals[0].strIngredient16;
-      var msr16 = data.meals[0].strMeasure16;
-      var make17 = data.meals[0].strIngredient17;
-      var msr17 = data.meals[0].strMeasure17;
-      var make18 = data.meals[0].strIngredient18;
-      var msr18 = data.meals[0].strMeasure18;
-      var make19 = data.meals[0].strIngredient19;
-      var msr19 = data.meals[0].strMeasure19;
-      var make20 = data.meals[0].strIngredient20;
-      var msr20 = data.meals[0].strMeasure20;
-    });
-}
+// function makeMeal(eventAdd2) {
+//   var findMeal = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+//   findMeal = findMeal + eventAdd2;
+//   fetch(findMeal)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       // console.log(data)
+//       // This function will handle printing ingredients and instructions for the specific drink selected
+//       document.getElementById("makeMeal").textContent = "Ingredients";
+//       var make1 = data.meals[0].strIngredient1;
+//       var msr1 = data.meals[0].strMeasure1;
+//       var make2 = data.meals[0].strIngredient2;
+//       var msr2 = data.meals[0].strMeasure2;
+//       var make3 = data.meals[0].strIngredient3;
+//       var msr3 = data.meals[0].strMeasure3;
+//       var make4 = data.meals[0].strIngredient4;
+//       var msr4 = data.meals[0].strMeasure4;
+//       var make5 = data.meals[0].strIngredient5;
+//       var msr5 = data.meals[0].strMeasure5;
+//       var make6 = data.meals[0].strIngredient6;
+//       var msr6 = data.meals[0].strMeasure6;
+//       var make7 = data.meals[0].strIngredient7;
+//       var msr7 = data.meals[0].strMeasure7;
+//       var make8 = data.meals[0].strIngredient8;
+//       var msr8 = data.meals[0].strMeasure8;
+//       var make9 = data.meals[0].strIngredient9;
+//       var msr9 = data.meals[0].strMeasure9;
+//       var make10 = data.meals[0].strIngredient10;
+//       var msr10 = data.meals[0].strMeasure10;
+//       var make11 = data.meals[0].strIngredient11;
+//       var msr11 = data.meals[0].strMeasure11;
+//       var make12 = data.meals[0].strIngredient12;
+//       var msr12 = data.meals[0].strMeasure12;
+//       var make13 = data.meals[0].strIngredient13;
+//       var msr13 = data.meals[0].strMeasure13;
+//       var make14 = data.meals[0].strIngredient14;
+//       var msr14 = data.meals[0].strMeasure14;
+//       var make15 = data.meals[0].strIngredient15;
+//       var msr15 = data.meals[0].strMeasure15;
+//       var make16 = data.meals[0].strIngredient16;
+//       var msr16 = data.meals[0].strMeasure16;
+//       var make17 = data.meals[0].strIngredient17;
+//       var msr17 = data.meals[0].strMeasure17;
+//       var make18 = data.meals[0].strIngredient18;
+//       var msr18 = data.meals[0].strMeasure18;
+//       var make19 = data.meals[0].strIngredient19;
+//       var msr19 = data.meals[0].strMeasure19;
+//       var make20 = data.meals[0].strIngredient20;
+//       var msr20 = data.meals[0].strMeasure20;
+//     });
+// }
 
 // search for meal
 var ul3 = document.getElementById("mealNames");
@@ -430,7 +430,9 @@ function searchForMeal(eventAdd) {
 
 function makeMeal(eventAdd2) {
   var findMeal = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-  findMeal = findMeal + eventAdd2;
+  
+  findMeal = findMeal + encodeURIComponent(eventAdd2);
+  // console.log(encodeURIComponent(eventAdd2))
   fetch(findMeal)
     .then(function (response) {
       return response.json();
@@ -438,7 +440,7 @@ function makeMeal(eventAdd2) {
     .then(function (data) {
       // console.log(data)
       // This function will handle printing ingredients and instructions for the specific drink selected
-      document.getElementById("makeMeal").textContent = "Ingredients";
+      document.getElementById("makeMeal").textContent = "Ingredients for " + data.meals[0].strMeal;
       var make1 = data.meals[0].strIngredient1;
       var msr1 = data.meals[0].strMeasure1;
       var make2 = data.meals[0].strIngredient2;
