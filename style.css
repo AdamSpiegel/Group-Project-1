@@ -72,6 +72,7 @@ font-size: 30px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
+
 }
 #myUL2 {
   list-style-type: none;
@@ -93,3 +94,35 @@ font-size: 30px;
 #myUL2 li a:hover:not(.header) {
   background-color: #eee;
 }
+
+#h4{
+  background-color: darkgrey;
+  color: black;
+  font-size: 75%;
+
+}
+
+.modal {
+  background-color: darkgrey;
+  color: black;
+  font-size: 75%;
+
+}
+
+.modal-footer{
+  background-color: darkgrey;
+  color: black;
+  font-size: 75%;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.Spacing1 {
+  margin: 75px
+}
+
+.Spacing2 {
+  margin: 75px
+  }
