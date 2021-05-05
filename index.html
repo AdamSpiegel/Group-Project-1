@@ -53,8 +53,9 @@
     <form>
       <label for="exampleInputPassword1" class="form-label"></label>
       <input type="text" class="form-control" id="input2" placeholder="Ingredient Selections">
+      <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
   </div>
-  <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
+  
   </form>
   <h4 id="makeDrink"></h4>
   <ul id="drinkNames"></ul>
@@ -70,30 +71,17 @@
     <form>
       <label for="exampleInputPassword1" class="form-label"></label>
       <input type="text" class="form-control" id="input3" placeholder="Ingredient Selections">
+      <button type="submit" class="btn btn-primary" id="submit4">Submit</button>
   </div>
-  <button type="submit" class="btn btn-primary" id="submit4">Submit</button>
+  
   </form>
   <h4 id="makeMeal"></h4>
   <ul id="mealNames"></ul>
   <p id="instructionsMeal"></p>
   </div>
 
-  <!-- Local Storage Functionality -->
-  <script>
-    function input2() {
-      if (typeof (Storage) !== "undefinded") {
-        if (localStorage.input2.value) {
-          localStorage.input2 = Number(localStorage.input2) + 1;
-        } else {
-          localStorage.input2 = 1;
-        }
-        document.getElementById("makeDrink").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-      } else {
-        document.getElementById("makeDrink").innerHTML = "Sorry, your browser does not support web storage...";
-      }
-    }
-  </script>
 
+  
   <head>
     <!-- jQuery UI <script> tag -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
