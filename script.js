@@ -72,6 +72,8 @@ document.querySelector("#myInput2").addEventListener("keyup", function (event) {
 //     console.log(e.target)
 //   })
 // }
+
+// Autocomplete funtion for drinks 
 document.getElementById("myUL").addEventListener("click", function (e) {
   if (e.target.tagName === "A") {
     console.log(e.target);
@@ -81,12 +83,31 @@ document.getElementById("myUL").addEventListener("click", function (e) {
   }
 });
 
+// Autocomplete function for meals
 document.getElementById("myUL2").addEventListener("click", function(e){
   if (e.target.tagName === "A"){
     console.log (e.target)
     // Insert autocomplete function here
     document.querySelector("#myInput2").value = e.target.textContent
     document.getElementById("myUL2").style.display = "none"
+  }
+});
+
+//add auto complete for names of drinks
+document.getElementById("drinkNames").addEventListener("click", function (e) {
+  if (e.target.tagName === "A") {
+    console.log(e.target);
+    // Insert autocomplete function here
+    document.querySelector("#input2").value = e.target.textContent;
+  }
+});
+
+//add auto complete for names of meals
+document.getElementById("mealNames").addEventListener("click", function (e) {
+  if (e.target.tagName === "A") {
+    console.log(e.target);
+    // Insert autocomplete function here
+    document.querySelector("#input3").value = e.target.textContent;
   }
 });
 
@@ -174,7 +195,7 @@ function deleteChild(target) {
 
 function makeDrink(eventAdd2) {
   var findDrink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
-  findDrink = findDrink + eventAdd2;
+  findDrink = findDrink + encodeURIComponent(eventAdd2);
   fetch(findDrink)
     .then(function (response) {
       return response.json();
@@ -182,7 +203,7 @@ function makeDrink(eventAdd2) {
     .then(function (data) {
       // console.log(data)
       // This function will handle printing ingredients and instructions for the specific drink selected
-      document.getElementById("makeDrink").textContent = "Ingredients";
+      document.getElementById("makeDrink").textContent = "Ingredients for " + data.drinks[0].strDrink;
       var make1 = data.drinks[0].strIngredient1;
       var msr1 = data.drinks[0].strMeasure1;
       var make2 = data.drinks[0].strIngredient2;
@@ -251,12 +272,18 @@ function makeDrink(eventAdd2) {
       // console.log(make3)
       for (var i = 0; i < makeIt.length; i++) {
         if (makeIt[i] != null) {
-          // console.log(makeIt[i]);
+          // console.log(msrAll[i]);
           var listEl3 = document.createElement("li");
+          listEl3.textContent = makeIt[i]
+          
+        } 
+        if (msrAll[i] != null){
+          var listEl3 = document.createElement("li");
+          // msrContent = msrAll[i]
           listEl3.textContent = msrAll[i] + " " + makeIt[i];
-          ul2.append(listEl3);
-          document.getElementById("instructions").textContent = instructions;
         }
+        ul2.append(listEl3);
+        document.getElementById("instructions").textContent = instructions;
       }
     });
 }
@@ -327,82 +354,6 @@ function getMealIngredients() {
 }
 getMealIngredients();
 
-// meal selections
-document.querySelector("#Submit3").addEventListener("click", function (event) {
-  event.preventDefault();
-  var input3 = document.getElementById("myInput2");
-  var inVal2 = input3.value;
-  // control flow to check if the input matches the available data
-  if (mealOpts.includes(inVal2.toLowerCase())) {
-    searchForMeal(inVal2);
-    // console.log(inVal2)
-  }
-});
-
-// input meal selection
-document.querySelector("#submit4").addEventListener("click", function (event) {
-  event.preventDefault();
-  var input4 = document.getElementById("input3");
-  var inVal4 = input4.value;
-  deleteChild(ul3);
-  makeMeal(inVal4);
-  // TODO: add function for drink name selection maybe add favorites here
-});
-
-function makeMeal(eventAdd2) {
-  var findMeal = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-  findMeal = findMeal + eventAdd2;
-  fetch(findMeal)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      // console.log(data)
-      // This function will handle printing ingredients and instructions for the specific drink selected
-      document.getElementById("makeMeal").textContent = "Ingredients";
-      var make1 = data.meals[0].strIngredient1;
-      var msr1 = data.meals[0].strMeasure1;
-      var make2 = data.meals[0].strIngredient2;
-      var msr2 = data.meals[0].strMeasure2;
-      var make3 = data.meals[0].strIngredient3;
-      var msr3 = data.meals[0].strMeasure3;
-      var make4 = data.meals[0].strIngredient4;
-      var msr4 = data.meals[0].strMeasure4;
-      var make5 = data.meals[0].strIngredient5;
-      var msr5 = data.meals[0].strMeasure5;
-      var make6 = data.meals[0].strIngredient6;
-      var msr6 = data.meals[0].strMeasure6;
-      var make7 = data.meals[0].strIngredient7;
-      var msr7 = data.meals[0].strMeasure7;
-      var make8 = data.meals[0].strIngredient8;
-      var msr8 = data.meals[0].strMeasure8;
-      var make9 = data.meals[0].strIngredient9;
-      var msr9 = data.meals[0].strMeasure9;
-      var make10 = data.meals[0].strIngredient10;
-      var msr10 = data.meals[0].strMeasure10;
-      var make11 = data.meals[0].strIngredient11;
-      var msr11 = data.meals[0].strMeasure11;
-      var make12 = data.meals[0].strIngredient12;
-      var msr12 = data.meals[0].strMeasure12;
-      var make13 = data.meals[0].strIngredient13;
-      var msr13 = data.meals[0].strMeasure13;
-      var make14 = data.meals[0].strIngredient14;
-      var msr14 = data.meals[0].strMeasure14;
-      var make15 = data.meals[0].strIngredient15;
-      var msr15 = data.meals[0].strMeasure15;
-      var make16 = data.meals[0].strIngredient16;
-      var msr16 = data.meals[0].strMeasure16;
-      var make17 = data.meals[0].strIngredient17;
-      var msr17 = data.meals[0].strMeasure17;
-      var make18 = data.meals[0].strIngredient18;
-      var msr18 = data.meals[0].strMeasure18;
-      var make19 = data.meals[0].strIngredient19;
-      var msr19 = data.meals[0].strMeasure19;
-      var make20 = data.meals[0].strIngredient20;
-      var msr20 = data.meals[0].strMeasure20;
-    });
-}
-
 // search for meal
 var ul3 = document.getElementById("mealNames");
 function searchForMeal(eventAdd) {
@@ -413,6 +364,7 @@ function searchForMeal(eventAdd) {
       return response.json();
     })
     .then(function (data) {
+      // console.log(data)
       for (var i = 0; i < data.meals.length; i++) {
         var second = data.meals[i].strMeal;
         var list3El = document.createElement("li");
@@ -427,7 +379,9 @@ function searchForMeal(eventAdd) {
 
 function makeMeal(eventAdd2) {
   var findMeal = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-  findMeal = findMeal + eventAdd2;
+  
+  findMeal = findMeal + encodeURIComponent(eventAdd2);
+  // console.log(encodeURIComponent(eventAdd2))
   fetch(findMeal)
     .then(function (response) {
       return response.json();
@@ -435,7 +389,7 @@ function makeMeal(eventAdd2) {
     .then(function (data) {
       // console.log(data)
       // This function will handle printing ingredients and instructions for the specific drink selected
-      document.getElementById("makeMeal").textContent = "Ingredients";
+      document.getElementById("makeMeal").textContent = "Ingredients for " + data.meals[0].strMeal;
       var make1 = data.meals[0].strIngredient1;
       var msr1 = data.meals[0].strMeasure1;
       var make2 = data.meals[0].strIngredient2;
@@ -522,25 +476,28 @@ function makeMeal(eventAdd2) {
         msr20,
       ];
       var instructions = data.meals[0].strInstructions;
-      // console.log(make3)
       for (var i = 0; i < makeIt.length; i++) {
         if (makeIt[i] != null) {
-          // console.log(makeIt[i]);
+          // console.log(msrAll[i]);
           var listEl3 = document.createElement("li");
+          listEl3.textContent = makeIt[i]
+          
+        } 
+        if (msrAll[i] != null){
+          var listEl3 = document.createElement("li");
+          // msrContent = msrAll[i]
           listEl3.textContent = msrAll[i] + " " + makeIt[i];
-          ul3.append(listEl3);
-          document.getElementById(
-            "instructionsMeal"
-          ).textContent = instructions;
         }
+        ul3.append(listEl3);
+        document.getElementById("instructionsMeal").textContent = instructions;
       }
     });
 }
 
 // Modal Initilization
 document.addEventListener("DOMContentLoaded", function () {
-  console.log(M);
+  // console.log(M);
   var elems = document.querySelectorAll(".modal");
   var instances = M.Modal.init(elems);
-  console.log(elems[0]);
+  // console.log(elems[0]);
 });
