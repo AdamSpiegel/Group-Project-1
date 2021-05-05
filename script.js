@@ -38,26 +38,25 @@ document.querySelector("#myInput").addEventListener("keyup", function (event) {
         }
     }
 })
-// Anonymous function
-// var a = Array.from(document.querySelectorAll("#myUL a"));
-// for(var i = 0; i<a.length; i++){
-//   a[i].addEventListener("click", function(e){
-//     console.log(e.target)
-//   })
-// }
+
+// Autocomplete function to populate DRINK selection row
 document.getElementById("myUL").addEventListener("click", function(e){
 if (e.target.tagName === "A"){
   console.log (e.target)
-  // Insert autocomplete function here
   document.querySelector("#myInput").value = e.target.textContent
   document.getElementById("myUL").style.display = "none"
 }
 
 });
 
-// loop through the array and add an event listener for each drink
-// Need Event Listeners to loop
-
+// Autocomplete function to populate FOOD selection row - NOT WORKING YET
+document.getElementById("myUL2").addEventListener("click", function (e){
+  if (e.target.tagName === "A"){
+    console.log (e.target)
+    document.querySelector("myInput2").value = e.target.textContent
+    document.getElementById("myUL2").style.display = "none"
+  }
+});
 
 
 // event listener for ingredient selection which will ready the second submit 
