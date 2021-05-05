@@ -93,6 +93,24 @@ document.getElementById("myUL2").addEventListener("click", function(e){
   }
 });
 
+//add auto complete for names of drinks
+document.getElementById("drinkNames").addEventListener("click", function (e) {
+  if (e.target.tagName === "A") {
+    console.log(e.target);
+    // Insert autocomplete function here
+    document.querySelector("#input2").value = e.target.textContent;
+  }
+});
+
+//add auto complete for names of meals
+document.getElementById("mealNames").addEventListener("click", function (e) {
+  if (e.target.tagName === "A") {
+    console.log(e.target);
+    // Insert autocomplete function here
+    document.querySelector("#input3").value = e.target.textContent;
+  }
+});
+
 // window.localStorage.setItem("myUL", "searchHistory");
 // console.log(localStorage.getItem("myUL"));
 // loop through the array and add an event listener for each drink
