@@ -81,21 +81,6 @@
   <p id="instructionsMeal"></p>
   </div>
 
-  <!-- Local Storage Functionality -->
-  <script>
-    function input2() {
-      if (typeof (Storage) !== "undefinded") {
-        if (localStorage.input2.value) {
-          localStorage.input2 = Number(localStorage.input2) + 1;
-        } else {
-          localStorage.input2 = 1;
-        }
-        document.getElementById("makeDrink").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-      } else {
-        document.getElementById("makeDrink").innerHTML = "Sorry, your browser does not support web storage...";
-      }
-    }
-  </script>
 
   <head>
     <!-- jQuery UI <script> tag -->
