@@ -11,6 +11,8 @@ var mealUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?i='
 
 var ul = document.getElementById("myUL");
 var ul2 = document.getElementById("drinkNames")
+var ul3 = document.getElementById("mealNames")
+var ul4 = document.getElementById("myUL2")
 
 var ingrOpts = [];
 
@@ -38,6 +40,27 @@ document.querySelector("#myInput").addEventListener("keyup", function (event) {
         }
     }
 })
+
+document.querySelector("#myInput2").addEventListener("keyup", function (event) {
+  var input, filter, ul, li, a, i, txtValue;
+  // input = document.getElementById("myInput2");
+  input = event.target
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL2");
+  if(input.value === "")
+  {ul.style.display = "none"} 
+  else {    ul.style.display = "block"}
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
+  }
+})
 // Anonymous function
 // var a = Array.from(document.querySelectorAll("#myUL a"));
 // for(var i = 0; i<a.length; i++){
@@ -55,6 +78,15 @@ if (e.target.tagName === "A"){
 
 });
 
+
+document.getElementById("myUL2").addEventListener("click", function(e){
+  if (e.target.tagName === "A"){
+    console.log (e.target)
+    // Insert autocomplete function here
+    document.querySelector("#myInput2").value = e.target.textContent
+    document.getElementById("myUL2").style.display = "none"
+  }
+});
 // loop through the array and add an event listener for each drink
 // Need Event Listeners to loop
 
@@ -197,7 +229,6 @@ function makeDrink(eventAdd2) {
 }
 
 // fetch food ingredients
-
 var mealIngredients = 'https://www.themealdb.com/api/json/v1/1/list.php?i=list'
 var mealOpts = [];
 function getMealIngredients(){
@@ -207,7 +238,12 @@ function getMealIngredients(){
   })
   .then(function (data) {
     for (var i = 0; i < data.meals.length; i++) {
-      var third = data.meals[i].strIngredient;
+      var third = data.meals[i].strIngredient
+      var listE2 = document.createElement('li');
+      var aE2 = document.createElement('a');
+      aE2.textContent = third;
+      listE2.append(aE2);
+      ul4.append(listE2);
       mealOpts.push(third.toLowerCase());
     }
   })
@@ -255,10 +291,13 @@ function searchForMeal(eventAdd) {
           var second = data.meals[i].strMeal;
           var list3El = document.createElement('li');
           var a3El = document.createElement('a');
+          // a3El.textContent = second;
+          // list3El.append(a3El);
+          // ul4.append(list3El);
+          // console.log(second);
           a3El.textContent = second;
           list3El.append(a3El);
           ul3.append(list3El);
-          // console.log(second);
       }
     });
 }
