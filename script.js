@@ -56,6 +56,8 @@ document.getElementById("myUL").addEventListener("click", function (e) {
   }
 });
 
+// window.localStorage.setItem("myUL", "searchHistory");
+// console.log(localStorage.getItem("myUL"));
 // loop through the array and add an event listener for each drink
 // Need Event Listeners to loop
 
@@ -64,12 +66,13 @@ document.querySelector("#Submit").addEventListener("click", function (event) {
   event.preventDefault();
   var input1 = document.getElementById("myInput");
   var inVal = input1.value;
+  window.localStorage.setItem("myUL", inVal);
   // control flow to check if the input matches the available data
   if (ingrOpts.includes(inVal.toLowerCase())) {
     searchForDrink(inVal);
   }
 });
-
+console.log(localStorage.getItem("myUL"));
 // second submission portion to handle drink selection
 document.querySelector("#submit2").addEventListener("click", function (event) {
   event.preventDefault();
