@@ -72,6 +72,8 @@ document.querySelector("#myInput2").addEventListener("keyup", function (event) {
 //     console.log(e.target)
 //   })
 // }
+
+// Autocomplete funtion for drinks 
 document.getElementById("myUL").addEventListener("click", function (e) {
   if (e.target.tagName === "A") {
     console.log(e.target);
@@ -81,6 +83,7 @@ document.getElementById("myUL").addEventListener("click", function (e) {
   }
 });
 
+// Autocomplete function for meals
 document.getElementById("myUL2").addEventListener("click", function(e){
   if (e.target.tagName === "A"){
     console.log (e.target)
