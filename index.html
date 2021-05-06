@@ -15,14 +15,12 @@
   <!-- Custom CSS sytling sheet -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>Cocktail & Recipe Generator</header>
-
+  <!--Navbar -->
   <nav>
     <div class="nav-wrapper">
-      <!-- Images for Logo section of Navbar -->
-      <a href="#" class="brand-logo"><img src="Images/liquor.png" alt="liquor image" style="width:60px;height:60px;"></a>
-      <a href="#" class="brand-logo2"><img src="Images/diet.png" alt="food image" style="width:60px;height: 60px;"></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <!-- Modal Trigger -->
         <button data-target="modal1" class="btn modal-trigger">WELCOME! Start Here!</button>
@@ -30,11 +28,11 @@
         <div id="modal1" class="modal">
           <div class="modal-content">
             <h4>How it Works!</h4>
-            <p>Welcome to The Cocktail and Recipe Generator! Get fresh ideas for your next meal! Below you will discover a wide variety of randomized coktails and recipes 
-              for your indulgence.  All you have to do is choose your liquor and food of choice, 
-              and then a variety of drink selections and recipes will produce for you!  Bon Appetit!&#127863;
+            <p>Welcome to The Cocktail and Recipe Generator! Get fresh ideas for your next meal! Below you will discover
+              a wide variety of randomized coktails and recipes
+              for your indulgence. All you have to do is choose your liquor and food of choice,
+              and then a variety of drink selections and recipes will produce for you! Bon Appetit!&#127863;
             </p>
-
           </div>
           <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Let's Go!</a>
@@ -46,53 +44,44 @@
     </div>
   </nav>
 
-  <div class="Spacing1"></div>
+  <!--Drink Generator-->
   
-  <h5>Choose Your Beverage!</h5>
-  <div class="wrapper">
-    <input type="text" id="myInput" placeholder="Search by Alcohol Ingredient" title="Type in a name">
-    <ul id="myUL">
-    </ul>
-    
-    <button id="Submit" >Search</button>
-    <form>
-      <label for="exampleInputPassword1" class="form-label"></label>
+    <h5>Choose Your Beverage!</h5>
+    <div class="wrapper">
+      <input type="text" id="myInput" placeholder="Search by Alcohol Ingredient" title="Type in a name">
+      <ul id="myUL">
+      </ul>
+      <button id="Submit">SEARCH</button>
+      <form>
+        <label for="exampleInputPassword1" class="form-label"></label>
+        <input type="text" class="form-control" id="input2" placeholder="Ingredient Selections">
+        <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
+    </div>
+    </form>
+    <h4 id="makeDrink"></h4>
+    <ul id="drinkNames"></ul>
+    <p id="instructions"></p>
 
-      <input type="text" class="form-control" id="input2" placeholder="Ingredient Selections">
-      <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
-  </div>
-  
 
-  </form>
-  <h4 id="makeDrink"></h4>
-  <ul id="drinkNames"></ul>
-  <p id="instructions"></p>
-  </div>
-
-  <div class="Spacing2"></div>
-  <!-- copying the above just to test the meal part -->
-  <h5>Choose Your Food!</h5>
-  <div class="wrapper">
-    <input type="text" id="myInput2" placeholder="Search by Food Ingredient" title="Type in a name">
-    <ul id="myUL2">
-    </ul>
-    <button id="Submit3">Search</button>
-    <form>
+  <!-- Meal Generator -->
+ 
+    <h5>Choose Your Food!</h5>
+    <div class="wrapper1">
+      <input type="text" id="myInput2" placeholder="Search by Food Ingredient" title="Type in a name">
+      <ul id="myUL2">
+      </ul>
+      <button id="Submit3">SEARCH</button>
+      <form>
       <label for="exampleInputPassword1" class="form-label"></label>
       <input type="text" class="form-control" id="input3" placeholder="Ingredient Selections">
       <button type="submit" class="btn btn-primary" id="submit4">Submit</button>
+    </div>
+    </form>
+    <h4 id="makeMeal"></h4>
+    <ul id="mealNames"></ul>
+    <p id="instructionsMeal"></p>
   </div>
-  
-
-  </form>
-  <h4 id="makeMeal"></h4>
-  <ul id="mealNames"></ul>
-  <p id="instructionsMeal"></p>
-  </div>
-
-
-
-  
+</div>
   <head>
     <!-- jQuery UI <script> tag -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
