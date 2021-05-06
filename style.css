@@ -1,19 +1,23 @@
 body{
   width: 100%;
   height: 100%;
-  background-color: darkblue;
+  background-color: rosybrown;
+  color: linen;
+  font-family: fantasy;
+}
+a{
   color: white;
 }
 
 header{
-  font-size: 40px;
-  color: white;
+  font-size: 75px;
+  color: linen;
   text-align: center;
 }
 
 nav{
-background-color: grey;
-color: white;
+background-color: linen;
+color: rosybrown;
 font-size: 30px;
 }
 
@@ -26,9 +30,6 @@ font-size: 30px;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;
-
-    
-=======
     margin-bottom: 12px;
     color: white;
   }
@@ -117,13 +118,13 @@ font-size: 30px;
   width: 20%;
 display: inline-flex;
 }
+
 .brand-logo {
   margin-left: 60px;
 }
 .brand-logo2{
   margin-left: 10px;
 }
-=======
 
 #h4{
   background-color: darkgrey;
@@ -145,23 +146,86 @@ display: inline-flex;
   font-size: 75%;
 }
 
-.wrapper {
+#input2{
+  color:white;
+}
+
+#input3{
+  color: white;
+}
+.modal .modal-footer {
+  border-radius: 0 0 2px 2px;
+  background-color: linen;
+  color: rosybrown;
+  padding: 4px 6px;
+  height: 56px;
   width: 100%;
+  text-align: center;
+}
+.modal .modal-content {
+  padding: 24px;
+  background-color: linen ;
+  color: rosybrown;
 }
 
-.Spacing1 {
-  margin: 75px
+.btn{
+    text-decoration: none;
+    color: rosybrown;
+    background-color: linen;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+    font-size: 20px;
 }
 
-.Spacing2 {
-  margin: 75px
-  }
-  
-  .brand-logo{
-    margin-left: 25px;
-  }
+.btn:hover{
+  color:linen;
+  background-color: rosybrown;
+}
 
-  .brand-logo2{
-    margin-left: 150px;
+nav ul a {
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+  font-size: 20px;
+  color: rosybrown;
+  display: block;
+  padding: 0 15px;
+  cursor: pointer;
+}
+nav ul a:hover{
+color: linen;
+background-color: rosybrown;
+}
+button{
+  background-color: linen;
+  color:rosybrown;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  padding: 8px 16px;
+}
+button:hover{
+  background-color: rosybrown;
+  color: linen;
+}
 
-  }
+.btn-flat {
+  margin: 6px 0;
+}
+.modal .modal-close {
+  cursor: pointer;
+  background-color: rosybrown;
+  color: linen;
+}
+.modal .modal-close:hover{
+  cursor: pointer;
+  background-color: linen;
+  color: rosybrown;
+}
+h5 {
+  font-size: 45px;
+  line-height: 110%;
+  margin: 1.0933333333rem 0 .656rem 0;
+}
