@@ -1,7 +1,7 @@
 body{
   width: 100%;
   height: 100%;
-  background-color: darkblue;
+  background-color: rosybrown;
   color: white;
 }
 
@@ -9,32 +9,32 @@ header{
   font-size: 40px;
   color: white;
   text-align: center;
-
 }
 
 nav{
 background-color: grey;
 color: white;
 font-size: 30px;
-
 }
 
-#myInput {
-  /* background-image: url('/css/searchicon.png'); */
+/*#myInput {
+  background-image: url('/css/searchicon.png'); 
   background-position: 10px 12px;
   background-repeat: no-repeat;
-  width: 20%;
+  width: 30%;
   font-size: 16px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+  margin-top: 10%;
+}*/
+
 #myUL {
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: none;
 }
+
 #myUL li a {
   border: 1px solid #ddd;
   margin-top: -1px; /* Prevent double borders */
@@ -44,19 +44,53 @@ font-size: 30px;
   font-size: 18px;
   color: black;
   display: block;
-  width: 20%;
+  /*width: 20%;*/
 }
+
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
 
-.brand-logo{
-  margin-left: 2%;
+
+.nav-wrapper{
+  background-color: linen;
 }
 
-.brand-logo2 {
-  margin-left: 10%;
+nav ul a{
+  color:rosybrown;
 }
+
+nav ul a:hover{
+  background-color: rosybrown;
+  color: linen;
+}
+
+.btn{
+  background-color: linen;
+  color: rosybrown;
+}
+
+.btn:hover{
+  background-color: rosybrown;
+  color: linen;
+}
+.column{
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+.row::after{
+  content:"";
+  display: table;
+  clear:both;
+}
+h1{
+  font-size: 30px;
+  text-align: justify;
+}
+
+
+
 
 /* #input2 {
   width: 500px; 

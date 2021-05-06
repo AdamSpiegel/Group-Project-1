@@ -19,12 +19,10 @@
 <body>
   <header>Cocktail & Recipe Generator</header>
 
+  <!--Navigation Bar-->
   <nav>
     <div class="nav-wrapper">
-      <!-- Images for Logo section of Navbar -->
-      <a href="#" class="brand-logo"><img src="Images/liquor.png" alt="liquor image" style="width:60px;height:60px;"></a>
-      <a href="#" class="brand-logo2"><img src="Images/diet.png" alt="food image" style="width:60px;height: 60px;"></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
         <!-- Modal Trigger -->
         <button data-target="modal1" class="btn modal-trigger">Terms and Conditions</button>
         <!-- Modal Structure -->
@@ -38,43 +36,57 @@
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Disagree</a>
           </div>
         </div>
-        <li><a href="https://everyrestaurantinthecity.com/">Restaurant Locator</a></li>
-        <li><a href="https://www.craftbeer.com/breweries/find-a-us-brewery">Brewery Locator</a></li>
+        <button class="btn modal-trigger">
+          <li><a href="https://everyrestaurantinthecity.com/">Restaurant Locator</a></li>
+        </button>
+        <button class="btn modal-trigger">
+          <li><a href="https://www.craftbeer.com/breweries/find-a-us-brewery">Brewery Locator</a></li>
+        </button>
       </ul>
     </div>
   </nav>
 
-  <div class="wrapper">
-    <input type="text" id="myInput" placeholder="Search for names.." title="Type in a name">
-    <ul id="myUL">
-    </ul>
-    <button id="Submit">Submit</button>
-    <form>
-      <label for="exampleInputPassword1" class="form-label"></label>
-      <input type="text" class="form-control" id="input2" placeholder="Ingredient Selections">
-  </div>
-  <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
-  </form>
-  <h4 id="makeDrink"></h4>
-  <ul id="drinkNames"></ul>
-  <p id="instructions"></p>
-  </div>
+  <div class="row">
+    <!-- Drink Generator-->
+    <div class="column">
+      <h1>Create your Cocktail...</h1>
+      <div class="wrapper">
+        
+        <input type="text" id="myInput" placeholder="Search for names.." title="Type in a name">
+        <ul id="myUL">
+        </ul>
+        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+        <form>
+          <label for="exampleInputPassword1" class="form-label"></label>
+          <input type="text" class="form-control" id="input2" placeholder="Ingredient Selections">
+      </div>
+      <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
+      </form>
+      <h4 id="makeDrink"></h4>
+      <ul id="drinkNames"></ul>
+      <p id="instructions"></p>
+    </div>
 
-  <!-- copying the above just to test the meal part -->
-  <div class="wrapper">
-    <input type="text" id="myInput2" placeholder="Search for names.." title="Type in a name">
-    <ul id="myUL2">
-    </ul>
-    <button id="Submit3">Submit</button>
-    <form>
-      <label for="exampleInputPassword1" class="form-label"></label>
-      <input type="text" class="form-control" id="input3" placeholder="Ingredient Selections">
-  </div>
-  <button type="submit" class="btn btn-primary" id="submit4">Submit</button>
-  </form>
-  <h4 id="makeMeal"></h4>
-  <ul id="mealNames"></ul>
-  <p id="instructionsMeal"></p>
+    <!-- Meal Generator -->
+    <div class="column">
+      <h1>Create your Meal...</h1>
+      <div class="wrapper">
+        
+        <input type="text" id="myInput2" placeholder="Search for names.." title="Type in a name">
+        <ul id="myUL2">
+        </ul>
+        <button type="submit" class="btn btn-primary" id="Submit3">Submit</button>
+        <form>
+          <label for="exampleInputPassword1" class="form-label"></label>
+          <input type="text" class="form-control" id="input3" placeholder="Ingredient Selections">
+      </div>
+      <button type="submit" class="btn btn-primary" id="submit4">Submit</button>
+      </form>
+      <h4 id="makeMeal"></h4>
+      <ul id="mealNames"></ul>
+      <p id="instructionsMeal"></p>
+    </div>
+
   </div>
 
   <!-- Local Storage Functionality -->
