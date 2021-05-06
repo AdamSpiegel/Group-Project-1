@@ -3,7 +3,7 @@ body{
   height: 100%;
   background-color: rosybrown;
   color: linen;
-  font-family: fantasy;
+  font-family: 'Lateef', cursive;
 }
 a{
   color: white;
@@ -184,6 +184,9 @@ display: inline-flex;
   color:linen;
   background-color: rosybrown;
 }
+.btn:focus{
+  background-color: grey;
+}
 
 nav ul a {
   -webkit-transition: background-color .2s ease-out;
@@ -205,12 +208,15 @@ button{
   cursor: pointer;
   border: none;
   padding: 8px 16px;
+
 }
 button:hover{
   background-color: rosybrown;
   color: linen;
 }
-
+button:focus{
+  background-color: grey;
+}
 .btn-flat {
   margin: 6px 0;
 }
