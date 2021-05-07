@@ -26,7 +26,7 @@ font-size: 30px;
     margin: 20px 20px 20px 20px;
     background-position: 10px 12px;
     background-repeat: no-repeat;
-    width: 30%;
+    width: 50%;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;
@@ -72,10 +72,10 @@ font-size: 30px;
   
 #myInput2 {
   /* background-image: url('/css/searchicon.png'); */
-  margin: 20px 20px 20px 20px;
+  margin: 35px 20px 20px 20px;
   background-position: 10px 12px;
   background-repeat: no-repeat;
-  width: 30%;
+  width: 50%;
   font-size: 16px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
@@ -108,14 +108,14 @@ font-size: 30px;
 #input3 {
   border: 1px solid white;
   padding: 12px 20px 12px 40px;
-  width: 20%;
+  width: 50%;
   margin: 20px 20px 20px 20px;
 }
 #input2 {
   margin: 20px 20px 20px 20px;
   border: 1px solid white;
   padding: 12px 20px 12px 40px;
-  width: 20%;
+  width: 50%;
 display: inline-flex;
 }
 
@@ -208,6 +208,7 @@ button{
   cursor: pointer;
   border: none;
   padding: 8px 16px;
+  
 
 }
 button:hover{
@@ -235,3 +236,7 @@ h5 {
   line-height: 110%;
   margin: 1.0933333333rem 0 .656rem 0;
 }
+
+/* #Submit2 {
+  height: ;
+} */
