@@ -137,8 +137,9 @@ document.querySelector("#submit2").addEventListener("click", function (event) {
   var input2 = document.getElementById("input2");
   var inVal2 = input2.value;
   deleteChild(ul2);
-  makeDrink(inVal2);
-  // TODO: add function for drink name selection maybe add favorites here
+  if(input2.value){
+    makeDrink(inVal2);
+  }
 });
 
 // Fetch drink api to find list of available ingredients to make the drinks with
@@ -327,8 +328,9 @@ document.querySelector("#submit4").addEventListener("click", function (event) {
   var input4 = document.getElementById("input3");
   var inVal4 = input4.value;
   deleteChild(ul3);
-  makeMeal(inVal4);
-  // TODO: add function for drink name selection maybe add favorites here
+  if (input4.value){
+    makeMeal(inVal4);
+  }
 });
 
 // fetch food ingredients
