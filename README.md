@@ -46,10 +46,7 @@ so that I can have them saved for future use.
         - Creating a user reset button, so the page does not have to be refreshed manually by the user after searching.
         - Updating media queries appropriatley, to create a better mobile experience.
 
-<!-- Insert Screenshot of generator below after styling complete -->
- <!-- <img src="Screenshot (34).png" alt="Day Planner Image 1">
-
- <img src="Screenshot (35).png" alt="Day Planner Image 2">  -->
+![image of webpage](Images/demoImg.png)
 
 
 ## <u>Live Link to Deployed Page</u>
