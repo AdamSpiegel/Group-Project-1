@@ -283,4 +283,11 @@ h5 {
   margin-top: 50px;
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+   position: relative;
+   background-color: crimson;
+   }
+ }
+
 
